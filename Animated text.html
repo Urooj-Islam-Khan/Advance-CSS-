@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Text 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            background-color: #343f4f;
+        }
+
+        .wrapper {
+            display: inline-flex;
+
+        }
+
+        .wrapper .static-txt {
+            color: #fff;
+            font-size: 60px;
+            font-weight: 400;
+            transform: scale(1);
+
+        }
+
+        .wrapper .dyanamic-txts {
+            margin-left: 15px;
+            height: 50px;
+            position: relative;
+            line-height: 100px;
+            /* min-height: 0; */
+
+
+        }
+
+        ul {
+
+            height: 68px;
+            overflow: hidden;
+        }
+
+        .dynamic-txts li {
+            white-space: nowrap;
+            color: #fc6d6d;
+            list-style: none;
+            font-size: 60px;
+            font-weight: 500;
+            position: relative;
+            top: 0;
+            animation: slide 4.5s steps(3) infinite;
+
+        }
+
+        @keyframes slide {
+            100% {
+                top: -210px;
+            }
+
+        }
+
+        .dynamic-txts li span {
+            position: relative;
+            /* background-image: url(/Pics/pics10.jpeg);
+            clip-path: text;
+            background-clip: text; */
+            letter-spacing: 1px;
+            /* color: transparent; */
+        }
+
+        .dynamic-txts li span::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #343f4f;
+            border-left: 2px solid #fc6d6d;
+
+            animation: typing 1.5s steps(10) infinite;
+        }
+
+        @keyframes typing {
+            100% {
+                left: 100%;
+                margin: 0-35px 0 35px;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 220px;
+        }
+
+        h2 {
+            position: absolute;
+            top: 480px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="static-txt">I'm</div>
+        <ul class="dynamic-txts">
+            <li><span>Developer</span></li>
+            <li><span>Designer</span></li>
+            <li><span>Freelancer</span></li>
+        </ul>
+    </div>
+    <img src="/Pics/text2.png" alt="">
+    <h2>The Coding Room</h2>
+</body>
+
+</html>
